@@ -1,0 +1,42 @@
+<!-- catalog -->
+
+<div class="catalog" style="margin-top: 10%;">
+	<div class="container">
+		<div class="row" style="margin-left:19% ;">
+			<div class="col-7">
+				<input type="text" style='background-color: #2b2b31;color: #fff;border-color:blue;width:100%;'
+					[(ngModel)]="term" name="Search" placeholder="Search">
+			</div>
+			<div class="col-5">
+				<form [formGroup]="pageForm">
+					<div class="form-group">
+						<select formControlName="page" class="input"
+							style="padding: 3px;background-color:blue;" type="button" name="page"
+							placeholder="page" (change)="onSelect($event)">
+							<option value="1">Page 1</option>
+							<option value="2">Page 2</option>
+							<option value="3">Page 3</option>
+							<option value="4">Page 4</option>
+							<option value="5">Page 5</option>
+							<option value="6">Page 6</option>
+							<option value="7">Page 7</option>
+							<option value="8">Page 8</option>
+							<option value="9">Page 9</option>
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" style="margin-top:30px;">
+			<!-- card -->
+			<div class="col-6 col-sm-4 col-lg-3 col-xl-2" *ngFor="let m of result | filterTitle:term">
+				<app-movie [x]='m'></app-movie>
+			</div>
+			<!-- end card -->
+		</div>
+	</div>
+</div>
+
+<!-- end catalog -->

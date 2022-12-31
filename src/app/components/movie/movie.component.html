@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card__cover">
+        <img src="https://image.tmdb.org/t/p/w500/{{x.poster_path}}" alt="">
+        <a (click)="goToDisplayMovie(x.id)" class="card__play">
+            <i class="icon ion-ios-play"></i>
+        </a>
+    </div>
+    <div class="card__content">
+        <h3 class="card__title"><a href="#">{{x.title}}</a></h3>
+        <span class="card__category">
+            <a href="#">{{x.release_date}}</a>
+        </span>
+        <span class="card__rate">
+            <span [ngClass]="{'beginn':sizeEtoile(x.vote_average)==1,
+            junior:sizeEtoile(x.vote_average)==2,
+            senior:sizeEtoile(x.vote_average)==3 }"><i class="icon ion-ios-star"></i></span>{{x.vote_average}}</span>
+    </div>
+</div>
