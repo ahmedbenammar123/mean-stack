@@ -10,7 +10,7 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
 
 const routes: Routes = [
     //http://localhost;4200/popular
-    {path:'popular',component:PopularComponent},
+    {path:'',component:PopularComponent},
     //http://localhost;4200/newPlaying
     {path:'topRated',component:TopRatedComponent},
     //http://localhost;4200/newPlaying
